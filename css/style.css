@@ -1,0 +1,183 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #dadbdd;
+}
+
+.main {
+	width: 320px;
+	height: 300px;
+	background: white;
+	margin: 0 auto;
+	margin-top: 50px;
+	border-radius: 5px;
+	font-family: Arial;
+	font-size: 14px;
+}
+
+.content {
+	width: 300px;
+	height: 280px;
+	margin: 10px;
+	float: left;
+	background: #dddddd;
+}
+
+.selectBox {
+    font-style: italic;
+    float: left;
+    width: 250px;
+    position: relative;
+    margin: 20px 25px;
+    padding: 0px;
+    overflow: hidden;
+}
+.box {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	width: 250px;
+}
+.box input {
+    float: left;
+    padding: 5px 5px 5px 10px;
+    width: 234px;
+    color: #315f8c;
+    box-shadow: -1px -1px 1px #aeaeae;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: georgia;
+    margin: 0px;
+    text-align: left;
+}
+.selectBox1 {
+    font-style: italic;
+    float: left;
+    width: 250px;
+    position: relative;
+    margin: 20px 25px;	
+}
+.selectBox1 span.selection {
+    border-width: 1px 0px 1px 1px;
+    border-color: #cccccc;
+    border-style: solid none solid solid;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    float: left;
+    padding: 5px 5px 5px 10px;
+    width: 205px;
+    color: #315f8c;
+    box-shadow: -1px -1px 1px #aeaeae;
+    background: white;
+}
+.selectBox2 {
+	width: 250px;
+	float: left;
+}
+.arrow {
+    border: 1px solid #316b99;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    float: left;
+    padding: 5px;
+    color: white;
+    width: 17px;
+    font-style: normal;
+    background: #316b99;
+    box-shadow: -1px -1px 1px #316b99;
+}
+.dropdown {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    float: left;
+    width: 250px;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    background: white;
+    z-index: 1;
+    box-shadow: -1px -1px 1px #aeaeae;
+    display: none;
+}
+.drptop {
+	float: left;
+	width: 100%;
+	background: #3881b8;
+	color: white;
+	border-radius: 5px 5px 0 0;
+	padding: 5px 0;
+}
+.drptop a {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	color: white;
+	text-decoration: none;
+	font-style: normal;
+}
+.drptop p {
+	float: left;
+	padding-left: 8px;
+	margin: 0px;
+	cursor: pointer;
+}
+.select {
+	float: left;
+	width: 118px;
+	margin: 0 10px 0 5px;
+}
+.deselect {
+	float: left;
+	width: 115px;
+}
+.drpdown {
+	float: left;
+}
+.drpdown a {
+    border-bottom: 1px solid #dddddd;
+    float: left;
+    padding: 5px 5px 5px 5px;
+    width: 240px;
+    color: black;
+    font-style: normal;
+    cursor: auto;
+    text-decoration: none;
+}
+.drpdown a input {
+	vertical-align: middle;
+	float: left;
+	-ms-transform: scale(1.5); /* IE */
+	-moz-transform: scale(1.5); /* FF */
+	-webkit-transform: scale(1.5); /* Safari and Chrome */
+	-o-transform: scale(1.5); /* Opera */
+    outline: none;
+
+}
+.drpdown a label {
+	float: left;
+	margin: 0px;
+	padding-left: 5px;
+	vertical-align: middle;
+}
+.tot {
+	float: left;
+	padding: 0 0 0 3px;
+	margin: 0px;
+}
+.selectBox1 select {
+    width:250px;
+    float:left;
+}
+
+.img {
+    float: left;
+    height:20px;
+    width:20px;
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+#multiselect {
+    display:none;
+}

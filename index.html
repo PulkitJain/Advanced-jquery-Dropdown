@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dropdown</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script language="javascript" type="text/javascript" src='js/jquery-1.7.2.min.js'></script>
+    <script language="javascript" type="text/javascript">
+        
+        $(document).ready(function(){
+            $('select').each(function(){
+                console.log($(this).attr('id'));
+                $(this).find('option').each(function(){
+                    console.log($(this).val());
+                });
+            });
+        });
+
+        function select()
+        {
+            var n=10;
+            for(var i=1; i<n; i++)
+            {
+                if(document.getElementById("c"+String(i)) == null)
+                {
+
+                }
+                else
+                {
+                    document.getElementById("c"+String(i)).checked = true;
+                    document.getElementById("ot"+String(i)).selected="selected";
+                    document.getElementById("tot").style.display='block';
+                    document.getElementById("tot").innerHTML= "(" + i + ")";
+                    document.getElementById("team1").innerHTML=i+" Selected";
+                }
+            }
+        }
+        function deselect()
+        {
+            var n=10;
+            for(var i=1; i<n; i++)
+            {
+                if(document.getElementById("c"+String(i)) == null)
+                {
+
+                }
+                else
+                {
+                    document.getElementById("c"+String(i)).checked = false;
+                    document.getElementById("ot"+String(i)).selected=""
+                    document.getElementById("tot").style.display='none';
+                    document.getElementById("team1").innerHTML="*Which best describes you?";
+                }
+                
+            }
+        }
+        function count()
+        {
+            var x=0;
+            var n=10;
+            for(var i=1; i<n; i++)
+            {
+                if(document.getElementById("c"+String(i)) == null)
+                {
+
+                }
+                else
+                {
+                    if(document.getElementById("c"+String(i)).checked == true)
+                    {
+                        document.getElementById("ot"+String(i)).selected="selected"
+                        document.getElementById("tot").style.display='block';
+                        x=x+1;
+                        document.getElementById("tot").innerHTML= "(" + x + ")";
+                        document.getElementById("team1").innerHTML = x + " Selected";
+                    }
+                    else
+                    {
+                        document.getElementById("ot"+String(i)).selected=""
+                    }
+                    document.getElementById("js"+String(i)).innerHTML =  document.getElementById("ot"+String(i)).innerHTML;
+                    if(x==0)
+                    {
+                        document.getElementById("team1").innerHTML="*Which best describes you?";
+                        document.getElementById("tot").style.display='none';
+                    }        
+                }
+                
+            }
+        }
+        function subMenu()
+        {
+
+            if(document.getElementById("dropdown").style.display=='block')
+            {
+                document.getElementById("arrow").innerHTML="&#9660;"
+                document.getElementById("dropdown").style.display='none';
+            }
+            else
+            {
+                document.getElementById("arrow").innerHTML="&#9650;"
+                document.getElementById("dropdown").style.display='block';
+            }
+        }
+        function closedd()
+        {
+            var idd =target.getElementById("dropdown");
+             alert(idd);
+        }
+    </script>
+</head>
+<body onclick="closedd()", onload="count()">
+    <div class="main">
+        <div class="content">
+            <div class="selectBox">
+                <div class="box">
+                    <input type="text" placeholder="*Your email address">
+                </div>
+            </div>
+            <select id="multiselect" multiple="multiple">
+                <option id="ot1">Option No. 1</option>
+                <option id="ot2">Option No. 2</option>
+                <option id="ot3">Option No. 3</option>
+            </select>
+            <div id="addSelectbox"></div>
+            <div class="selectBox1">
+                <div class="selectBox2" id="menu" onclick="subMenu()">
+                    <span id="team1" class="selection">*Which best describes you?</span>
+                    <span id="arrow" class="arrow">&#9660;</span>
+                </div>
+                <div id="dropdown" class="dropdown">
+                 <div class="drptop"><div class="select" onclick="select()">
+                            <a href="#">(&#10003)</a> <p>Select All</p>
+                           <div id="tot" class="tot">&nbsp;</div>
+                        </div>
+                       <div class="deselect" onclick="deselect()">
+                            <a href="#">(X)</a>
+                            <p>Deselect All</p>
+                        </div>
+                    </div>
+                    <div class="drpdown" onclick="count()">
+                        <a href="javascript:;">
+                            <input id="c1" type="CHECKBOX">
+                            <label for="c1" id="js1"></label>
+                        </a>
+                        <a href="javascript:;">
+                            <input id="c2" type="CHECKBOX">
+                            <label for="c2" id="js2"></label>
+                        </a>
+                        <a href="javascript:;">
+                            <input id="c3" type="CHECKBOX">
+                            <label for="c3" id="js3"></label>
+                        </a>
+                    </div>
+                </div>
+           </div>
+        </div>
+    </div>
+</body>
+</html> 
