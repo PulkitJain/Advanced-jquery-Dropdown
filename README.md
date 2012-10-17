@@ -1,4 +1,4 @@
 Dropdown
 ========
 
-Multiselect dropdown with customize features.
+Multiselect dropdown with customize features
