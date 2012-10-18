@@ -8,7 +8,6 @@ $(document).ready(function(){
             return false;
         }
         else {
-            alert("I am going.");
             $("div.dropdown").hide();
         }
     });
