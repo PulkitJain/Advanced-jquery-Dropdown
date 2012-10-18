@@ -1,3 +1,6 @@
+/*All the Scripts and jquery in this js file.*/
+
+
 $(document).ready(function(){
     $('select').each(function(){
         console.log($(this).attr('id'));
@@ -12,11 +15,7 @@ function select()
     var n=10;
     for(var i=1; i<n; i++)
     {
-        if(document.getElementById("c"+String(i)) == null)
-        {
-
-        }
-        else
+        if(!(document.getElementById("c"+String(i)) == null))
         {
             document.getElementById("c"+String(i)).checked = true;
             document.getElementById("ot"+String(i)).selected="selected";
@@ -31,11 +30,7 @@ function deselect()
     var n=10;
     for(var i=1; i<n; i++)
     {
-        if(document.getElementById("c"+String(i)) == null)
-        {
-
-        }
-        else
+        if(!(document.getElementById("c"+String(i)) == null))
         {
             document.getElementById("c"+String(i)).checked = false;
             document.getElementById("ot"+String(i)).selected=""
@@ -51,11 +46,7 @@ function count()
     var n=10;
     for(var i=1; i<n; i++)
     {
-        if(document.getElementById("c"+String(i)) == null)
-        {
-
-        }
-        else
+        if(!(document.getElementById("c"+String(i)) == null))
         {
             if(document.getElementById("c"+String(i)).checked == true)
             {
@@ -74,7 +65,7 @@ function count()
             {
                 document.getElementById("team1").innerHTML="*Which best describes you?";
                 document.getElementById("tot").style.display='none';
-            }        
+            }
         }
         
     }
@@ -92,9 +83,4 @@ function subMenu()
         document.getElementById("arrow").innerHTML="&#9650;"
         document.getElementById("dropdown").style.display='block';
     }
-}
-function closedd()
-{
-    var idd = target.getElementById("dropdown");
-    alert(idd);
 }
