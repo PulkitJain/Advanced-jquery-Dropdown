@@ -44,14 +44,11 @@ function deselect()
     var n=10;
     for(var i=1; i<n; i++)
     {
-        if(!(document.getElementById("c"+String(i)) == null))
-        {
-            document.getElementById("c"+String(i)).checked = false;
-            document.getElementById("ot"+String(i)).selected=""
-            document.getElementById("tot").style.display='none';
-            document.getElementById("team1").innerHTML="*Which best describes you?";
-        }
-        
+        $('#c'+String(i)).prop('checked', false);
+        $('#ot'+String(i)).attr("selected","");
+        $('#tot').show();
+        $('#tot').html("("+i+")");
+        $('#team1').html(i+" Selected");
     }
 }
 
