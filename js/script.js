@@ -23,23 +23,22 @@ $(document).ready(function(){
     });
 });
 
-
-
 function select()
 {
     var n=10;
     for(var i=1; i<n; i++)
     {
-        if(!(document.getElementById("c"+String(i)) == null))
+        if(!($('#ot'+String(i)).length == 0))
         {
-            document.getElementById("c"+String(i)).checked = true;
-            document.getElementById("ot"+String(i)).selected="selected";
-            document.getElementById("tot").style.display='block';
-            document.getElementById("tot").innerHTML= "(" + i + ")";
-            document.getElementById("team1").innerHTML=i+" Selected";
+            $('#c'+String(i)).prop('checked', true);
+            $('#ot'+String(i)).attr("selected","selected");
+            $('#tot').show();
+            $('#tot').html("("+i+")");
+            $('#team1').html(i+" Selected");
         }
     }
 }
+
 function deselect()
 {
     var n=10;
