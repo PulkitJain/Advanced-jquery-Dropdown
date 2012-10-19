@@ -2,14 +2,12 @@
 
 
 $(document).ready(function(){
-    alert("document");
     $(".dropdown").click(function(e){
-        alert("close");
         e.stopPropagation();
     });
     $("body").click(function(e) {
         var currentClass = e.target.className;
-        if (currentClass == 'arrow' || currentClass == 'selection' || currentClass == 'dropdown' ) {
+        if (currentClass == 'arrow' || currentClass == 'selection') {
             return false;
         }
         else {
