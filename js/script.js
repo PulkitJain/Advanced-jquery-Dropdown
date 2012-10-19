@@ -2,6 +2,11 @@
 
 
 $(document).ready(function(){
+    alert("document");
+    $(".dropdown").click(function(e){
+        alert("close");
+        e.stopPropagation();
+    });
     $("body").click(function(e) {
         var currentClass = e.target.className;
         if (currentClass == 'arrow' || currentClass == 'selection' || currentClass == 'dropdown' ) {
@@ -10,6 +15,7 @@ $(document).ready(function(){
         else {
             $("div.dropdown").hide();
         }
+        
     });
     $('select').each(function(){
         console.log($(this).attr('id'));
@@ -95,6 +101,3 @@ function subMenu()
         document.getElementById("dropdown").style.display='block';
     }
 }
-
-
-
