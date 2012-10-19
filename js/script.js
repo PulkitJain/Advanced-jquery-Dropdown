@@ -7,7 +7,7 @@ $(document).ready(function(){
     });
     $("body").click(function(e) {
         var currentClass = e.target.className;
-        if (currentClass == 'arrow' || currentClass == 'selection') {
+        if (currentClass == 'arrow' || currentClass == 'selection' || currentClass == 'dropdown' ) {
             return false;
         }
         else {
@@ -55,6 +55,7 @@ function deselect()
         
     }
 }
+
 function count()
 {
     var x=0;
@@ -85,17 +86,15 @@ function count()
         
     }
 }
+
 function subMenu()
 {
-
-    if(document.getElementById("dropdown").style.display=='block')
+    if($("#dropdown").css('display')=='none' )
     {
-        document.getElementById("arrow").innerHTML="&#9660;"
-        document.getElementById("dropdown").style.display='none';
+        $("#dropdown").css('display','block');
     }
     else
     {
-        document.getElementById("arrow").innerHTML="&#9650;"
-        document.getElementById("dropdown").style.display='block';
+        $("#dropdown").css('display','none');
     }
 }
