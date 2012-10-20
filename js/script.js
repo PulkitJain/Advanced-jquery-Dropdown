@@ -1,20 +1,56 @@
 /*All the Scripts and jquery in this js file.*/
 
-
+/*Document ready function*/
 $(document).ready(function(){
+    var htmlSelect='<div class="selectBox1">'+
+                        '<div class="selectBox2" id="menu" onclick="subMenu()">'+
+                        '<span id="team1" class="selection">*Which best describes you?</span>'+
+                            '<span id="arrow" class="arrow">&#9660;</span>'+
+                        '</div>'+
+                        '<div id="dropdown" class="dropdown">'+
+                            '<div class="drptop">'+
+                                '<div class="select" onclick="select()">'+
+                                    '<a href="#">(&#10003)</a> <p>Select All</p>'+
+                                    '<div id="tot" class="tot">&nbsp;</div>'+
+                                '</div>'+
+                                '<div class="deselect" onclick="deselect()">'+
+                                    '<a href="#">(X)</a>'+
+                                    '<p>Deselect All</p>'+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="drpdown" onclick="count()">'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>';
+                    $('#addSelectbox').append(htmlSelect);
+                        var anchor ='<a href="javascript:;">'+
+                                        '<input id="c1" type="CHECKBOX">'+
+                                        '<label for="c1" id="js1"></label>'+
+                                    '</a>'+
+                                    '<a href="javascript:;">'+
+                                        '<input id="c2" type="CHECKBOX">'+
+                                        '<label for="c2" id="js2"></label>'+
+                                    '</a>'+
+                                    '<a href="javascript:;">'+
+                                        '<input id="c3" type="CHECKBOX">'+
+                                        '<label for="c3" id="js3"></label>'+
+                                    '</a>';
+                        $('.drpdown').append(anchor); 
+                        
     $(".dropdown").click(function(e){
         e.stopPropagation();
     });
+
     $("body").click(function(e) {
         var currentClass = e.target.className;
-        if (currentClass == 'arrow' || currentClass == 'selection' || currentClass == 'dropdown' ) {
+        if (currentClass == 'arrow' || currentClass == 'selection') {
             return false;
         }
         else {
             $("div.dropdown").hide();
         }
-        
     });
+
     $('select').each(function(){
         console.log($(this).attr('id'));
         $(this).find('option').each(function(){
@@ -23,6 +59,7 @@ $(document).ready(function(){
     });
 });
 
+/*Dropdown open and close function*/
 function subMenu()
 {
     if($("#dropdown").css('display')=='none' )
@@ -35,9 +72,10 @@ function subMenu()
     }
 }
 
+/*Select all function*/
 function select()
 {
-    var n=10;
+    var n=100;
     for(var i=1; i<n; i++)
     {
         if(!($('#ot'+String(i)).length == 0))
@@ -51,22 +89,28 @@ function select()
     }
 }
 
+/*Deselect all function*/
 function deselect()
 {
-    var n=10;
+    var n=100;
     for(var i=1; i<n; i++)
     {
-        $('#c'+String(i)).prop('checked', false);
-        $('#ot'+String(i)).attr("selected",false);
-        $('#tot').hide();
-        $('#tot').html("("+i+")");
-        $('#team1').html("*Which best describes you?");
+        if(!($("#ot"+String(i)).length == 0))
+        {
+            $('#c'+String(i)).prop('checked', false);
+            $('#ot'+String(i)).attr("selected",false);
+            $('#tot').hide();
+            $('#tot').html("("+i+")");
+            $('#team1').html("*Which best describes you?");
+        }
     }
 }
+
+/*No. of selection counts function*/
 function count()
 {
     var x=0;
-    var n=4;
+    var n=10;
     for(var i=1; i<n; i++)
     {
         var check = $('#c'+String(i)).prop('checked');
@@ -75,7 +119,7 @@ function count()
             $('#tot').css('display','block');
             x=x+1;
             $("#tot").html("("+x+")");
-            $("#team1").html(x+"Selected");
+            $("#team1").html(x+" Selected");
         }
         else {
             $('#ot'+String(i)).attr("selected",false);
