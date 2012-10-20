@@ -23,6 +23,18 @@ $(document).ready(function(){
     });
 });
 
+function subMenu()
+{
+    if($("#dropdown").css('display')=='none' )
+    {
+        $("#dropdown").css('display','block');
+    }
+    else
+    {
+        $("#dropdown").css('display','none');
+    }
+}
+
 function select()
 {
     var n=10;
@@ -45,52 +57,33 @@ function deselect()
     for(var i=1; i<n; i++)
     {
         $('#c'+String(i)).prop('checked', false);
-        $('#ot'+String(i)).attr("selected","");
-        $('#tot').show();
+        $('#ot'+String(i)).attr("selected",false);
+        $('#tot').hide();
         $('#tot').html("("+i+")");
-        $('#team1').html(i+" Selected");
+        $('#team1').html("*Which best describes you?");
     }
 }
-
 function count()
 {
     var x=0;
-    var n=10;
+    var n=4;
     for(var i=1; i<n; i++)
     {
-        if(!(document.getElementById("c"+String(i)) == null))
-        {
-            if(document.getElementById("c"+String(i)).checked == true)
-            {
-                document.getElementById("ot"+String(i)).selected="selected"
-                document.getElementById("tot").style.display='block';
-                x=x+1;
-                document.getElementById("tot").innerHTML= "(" + x + ")";
-                document.getElementById("team1").innerHTML = x + " Selected";
-            }
-            else
-            {
-                document.getElementById("ot"+String(i)).selected=""
-            }
-            document.getElementById("js"+String(i)).innerHTML =  document.getElementById("ot"+String(i)).innerHTML;
-            if(x==0)
-            {
-                document.getElementById("team1").innerHTML="*Which best describes you?";
-                document.getElementById("tot").style.display='none';
-            }
+        var check = $('#c'+String(i)).prop('checked');
+        if(check==true) {
+            $('#ot'+String(i)).attr("selected","selected");
+            $('#tot').css('display','block');
+            x=x+1;
+            $("#tot").html("("+x+")");
+            $("#team1").html(x+"Selected");
         }
-        
-    }
-}
-
-function subMenu()
-{
-    if($("#dropdown").css('display')=='none' )
-    {
-        $("#dropdown").css('display','block');
-    }
-    else
-    {
-        $("#dropdown").css('display','none');
+        else {
+            $('#ot'+String(i)).attr("selected",false);
+        }
+        $('#js'+String(i)).html($('#ot'+String(i)).html());
+        if(x==0){
+            $("#team1").html("*Which best describes you?");
+            $("#tot").hide();
+        }
     }
 }
