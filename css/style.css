@@ -124,21 +124,23 @@ body {
 }
 .select {
 	float: left;
-	width: 118px;
+	width: 108px;
 	margin: 0 10px 0 5px;
 }
 .deselect {
 	float: left;
-	width: 115px;
+	width: 110px;
 }
 .drpdown {
 	float: left;
+    height:120px;
+    overflow-y:scroll;
 }
 .drpdown a {
     border-bottom: 1px solid #dddddd;
     float: left;
     padding: 5px 5px 5px 5px;
-    width: 240px;
+    width: 223px;
     color: black;
     font-style: normal;
     cursor: auto;
