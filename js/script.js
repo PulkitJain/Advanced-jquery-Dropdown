@@ -19,24 +19,22 @@ $(document).ready(function(){
                                 '</div>'+
                             '</div>'+
                             '<div class="drpdown" onclick="count()">'+
+                                
                             '</div>'+
                         '</div>'+
                     '</div>';
                     $('#addSelectbox').append(htmlSelect);
-                        var anchor ='<a href="javascript:;">'+
-                                        '<input id="c1" type="CHECKBOX">'+
-                                        '<label for="c1" id="js1"></label>'+
-                                    '</a>'+
-                                    '<a href="javascript:;">'+
-                                        '<input id="c2" type="CHECKBOX">'+
-                                        '<label for="c2" id="js2"></label>'+
-                                    '</a>'+
-                                    '<a href="javascript:;">'+
-                                        '<input id="c3" type="CHECKBOX">'+
-                                        '<label for="c3" id="js3"></label>'+
-                                    '</a>';
-                        $('.drpdown').append(anchor); 
-                        
+    var n=100;
+    for(var i=1; i<n; i++)
+    {
+        if(!($('#ot'+String(i)).length == 0))
+        {
+            var anchor ='<a href="javascript:;"><input id="c'+String(i)+'" type="CHECKBOX"><label for="c'+String(i)+'" id="js'+String(i)+'"></label></a>'
+            $('.drpdown').append(anchor);    
+        }
+        
+    }
+
     $(".dropdown").click(function(e){
         e.stopPropagation();
     });
@@ -110,7 +108,7 @@ function deselect()
 function count()
 {
     var x=0;
-    var n=10;
+    var n=100;
     for(var i=1; i<n; i++)
     {
         var check = $('#c'+String(i)).prop('checked');
