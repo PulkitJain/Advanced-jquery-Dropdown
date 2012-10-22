@@ -124,7 +124,7 @@ body {
 }
 .select {
 	float: left;
-	width: 108px;
+	width: 116px;
 	margin: 0 10px 0 5px;
 }
 .deselect {
@@ -133,7 +133,7 @@ body {
 }
 .drpdown {
 	float: left;
-    height:120px;
+    max-height:120px;
     overflow-y:scroll;
 }
 .drpdown a {
