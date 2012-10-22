@@ -24,8 +24,8 @@ $(document).ready(function(){
                         '</div>'+
                     '</div>';
                     $('#addSelectbox').append(htmlSelect);
-    var n=100;
-    for(var i=1; i<n; i++)
+    var n= $("#multiselect option ").size();
+    for(var i=1; i<=n; i++)
     {
         if(!($('#ot'+String(i)).length == 0))
         {
@@ -72,8 +72,8 @@ function subMenu()
 /*Select all function*/
 function select()
 {
-    var n=100;
-    for(var i=1; i<n; i++)
+   var n= $("#multiselect option ").size();
+    for(var i=1; i<=n; i++)
     {
         if(!($('#ot'+String(i)).length == 0))
         {
@@ -89,8 +89,8 @@ function select()
 /*Deselect all function*/
 function deselect()
 {
-    var n=100;
-    for(var i=1; i<n; i++)
+    var n= $("#multiselect option ").size();
+    for(var i=1; i<=n; i++)
     {
         if(!($("#ot"+String(i)).length == 0))
         {
@@ -107,24 +107,29 @@ function deselect()
 function count()
 {
     var x=0;
-    var n=100;
-    for(var i=1; i<n; i++)
+    var n= $("#multiselect option ").size();
+    for(var i=1; i<=n; i++)
     {
-        var check = $('#c'+String(i)).prop('checked');
-        if(check==true) {
-            $('#ot'+String(i)).attr("selected","selected");
-            $('#tot').css('display','block');
-            x=x+1;
-            $("#tot").html("("+x+")");
-            $("#team1").html(x+" Selected");
-        }
-        else {
-            $('#ot'+String(i)).attr("selected",false);
-        }
-        $('#js'+String(i)).html($('#ot'+String(i)).html());
-        if(x==0){
-            $("#team1").html("*Which best describes you?");
-            $("#tot").hide();
+        if(!($("#ot"+String(i)).length == 0))
+        {
+
+            var check = $('#c'+String(i)).prop('checked');
+            if(check==true)
+            {
+                $('#ot'+String(i)).attr("selected","selected");
+                $('#tot').css('display','block');
+                x=x+1;
+                $("#tot").html("("+x+")");
+                $("#team1").html(x+" Selected");
+            }
+            else {
+                $('#ot'+String(i)).attr("selected",false);
+            }
+            $('#js'+String(i)).html($('#ot'+String(i)).html());
+            if(x==0){
+                $("#team1").html("*Which best describes you?");
+                $("#tot").hide();
+            }    
         }
     }
 }
