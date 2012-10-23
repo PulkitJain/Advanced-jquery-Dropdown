@@ -69,7 +69,7 @@ function subMenu()
     }
 }
 
-/*Select all function*/
+/*Select all options*/
 function select()
 {
    var n= $("#multiselect option ").size();
