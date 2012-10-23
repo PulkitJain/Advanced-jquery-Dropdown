@@ -29,7 +29,7 @@ $(document).ready(function(){
     {
         if(!($('#ot'+String(i)).length == 0))
         {
-            var anchor ='<a href="javascript:;"><input id="c'+String(i)+'" type="CHECKBOX"><label id="js'+String(i)+'"></label></a>'
+            var anchor ='<a href="javascript:;"><input id="c'+String(i)+'" type="CHECKBOX"><label for="c'+String(i)+'" id="js'+String(i)+'"></label></a>'
             $('.drpdown').append(anchor);
         }
     }
